@@ -30,7 +30,13 @@ def complete_task(task_id):
             print(f"Marked as done: {t['name']}")
             return
     print("Task not found.")
-
+def delete_task(task_id):
+    for t in tasks:
+        if t["id"] == task_id:
+            tasks.remove(t)
+            print("Task deleted")
+            return
+    print("Task not found")
 def main():
     add_task("Design login page", "High")
     add_task("Write unit tests", "Medium")
